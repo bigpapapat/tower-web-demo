@@ -1,25 +1,26 @@
 ---
-hosts: all
-become: true
-tasks:
+- name: setup webserver
+  hosts: all
+  become: true
+  tasks:
 
-  - name: install apache
-    yum:
-      name: httpd
-      state: present
+    - name: install apache
+      yum:
+        name: httpd
+        state: present
       
-  - name: open firewall ports
-    firewalld:
-      port: 80/tcp
-      state: enabled
-      immediate: yes
+    - name: open firewall ports
+      firewalld:
+        port: 80/tcp
+        state: enabled
+        immediate: yes
       
-  - name: start webserver
-    service:
-      name: httpd
-      state: started
+    - name: start webserver
+      service:
+        name: httpd
+        state: started
       
-  - name: deploy index.html
-    template:
-      src: index.html.j2
-      dest: /var/www/html/index.html
+    - name: deploy index.html
+      template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
