@@ -38,7 +38,7 @@
       var_password_pam_unix_remember: !!str 5
       var_accounts_passwords_pam_faillock_fail_interval: !!str 900
       var_accounts_passwords_pam_faillock_deny: !!str 3
-      var_password_pam_minlen: !!str 16
+      var_password_pam_minlen: !!str 18
       var_password_pam_maxclassrepeat: !!str 4
       var_password_pam_maxrepeat: !!str 3
       var_password_pam_dcredit: !!str -1
